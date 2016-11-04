@@ -87,7 +87,8 @@ Follow me on Twitter @maridlcrmn
     border-color: #FFF;
     margin-right: 15px;
 }
-.btn-clear:hover
+.btn-clear:hover,
+.btn-clear:focus
 {
     color: #fff;
     background-color: #5bc0de;
