@@ -36,11 +36,11 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="navbar-collapse-2">
 				  <ul class="nav navbar-nav navbar-right" >
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Our Work</a></li>
-					<li><a href="#">All About Seagrass</a></li>
-					<li><a href="#">Submit Report</a></li>
-					<li><a href="#">Contact Us</a></li>
+					<li><a href="/about">About Us</a></li>
+					<li><a href="/work">Our Work</a></li>
+					<li><a href="/seagrass">All About Seagrass</a></li>
+					<li><a href="/submit">Submit Report</a></li>
+					<li><a href="/contact">Contact Us</a></li>
 					<li>
 					  <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse2" aria-expanded="false" aria-controls="nav-collapse2">Sign in</a>
 					</li>
