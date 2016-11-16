@@ -31,12 +31,12 @@ Route::get('/work', function () {
 	return view('our_work');
 });
 
-Route::get('/registration', function () {
-	return view('registration');
+Route::get('/register', function () {
+	return view('register');
 });
 
-Route::get('/signin', function () {
-	return view('sign_in');
+Route::get('/login', function () {
+	return view('login');
 });
 
 Route::get('/submit', function () {

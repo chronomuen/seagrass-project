@@ -1,0 +1,62 @@
+.navbar-default{
+  
+  background:transparent;
+  background-image:none;
+  border-color:transparent;
+  box-shadow:none;
+  width:100%;
+  margin:0 auto;
+  overflow:hidden;
+  color: #fff;
+  
+}
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+.navbar-toggle {
+    z-index:3;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: #fff;
+    background-color: #0099ff;
+}
+/*Main CSS*/
+html, body {
+	
+	background-color: #66ccff;
+	background:url('{{ asset('img/seagrass.jpg') }}') no-repeat center center fixed	; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+	height: 100vh;
+	margin: 0;
+}
+
+#particles{height:90vh}
+	
+#container {
+  position: relative;
+}
+#navi,
+#infoi {
+	overflow: hidden;
+	margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+}
+#infoi {
+  top: 150px;
+  z-index: 10;
+}
+
+
