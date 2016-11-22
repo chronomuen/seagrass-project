@@ -2,7 +2,7 @@
 {
     top: 200px;
     width: 100%;
-    color: #FFF;
+    color: #fff;
 }
 .btn-min-block
 {
@@ -11,13 +11,18 @@
 }
 .btn-clear
 {
-    color: #FFF;
+    color: #fff;
     background-color: transparent;
     border-color: #FFF;
     margin-right: 15px;
 }
-.btn-clear:hover
+.btn-clear:hover,
+.btn-clear:focus
 {
-    color: #000;
-    background-color: #FFF;
+    color: #fff;
+    background-color: #1cb94e;
+}
+.h1
+{
+	color: #66ccff;
 }
