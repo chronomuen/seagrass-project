@@ -18,6 +18,17 @@
 				
 			}
 		</script>
+		<style>
+		.fade-carousel .slides .slide-1 {
+		 background-image: url('{{ asset('images/sample.jpg') }}');
+		}
+		.fade-carousel .slides .slide-2 {
+		 background-image: url('{{ asset('images/sample.jpg') }}');
+		}
+		.fade-carousel .slides .slide-3 {
+		 background-image: url('{{ asset('images/sample.jpg') }}');
+		}
+		</style>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +54,7 @@
 		<div class="bannerContainer">
 			@include('navbar')
 			
-			<div class="carousel fade-carousel carousel-fade slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+			<div class="carousel fade-carousel carousel-fade slide" data-ride="carousel" data-interval="3000" id="bs-carousel">
 			  <!-- Overlay -->
 			  <div class="overlay"></div>
 
@@ -57,7 +68,7 @@
 			  <!-- Wrapper for slides -->
 			  <div class="carousel-inner">
 				<div class="item slides active">
-				  <div class="slide-1"></div>
+				  <div class="slide-1" style=""></div>
 				</div>
 				<div class="item slides">
 				  <div class="slide-2"></div>
@@ -80,7 +91,11 @@
 						</h3>
 						<div class="">
 							@if (Route::has('login'))
-							<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('/login') }}">Get started</a>
+								@if (Auth::guest())
+									<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('/login') }}">Get started</a>
+								@else
+									<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('/home') }}">Dashboard</a>
+								@endif
 							@endif
 						</div>
 					</div>
