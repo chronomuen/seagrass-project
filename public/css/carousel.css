@@ -126,7 +126,7 @@
   background-image: url('http://i-cdn.phonearena.com/images/articles/47012-image/photo2.jpg');
 }
 .fade-carousel .slides .slide-3 {
-  background-image: url('http://images.fonearena.com/blog/wp-content/uploads/2013/11/Lenovo-p780-camera-sample-10.jpg');
+  background-image: url('URL::{{asset('/images/sample.png')}}');
 }
 
 /********************************/
