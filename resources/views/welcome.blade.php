@@ -79,7 +79,9 @@
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 						</h3>
 						<div class="">
-							<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('login') }}">Get started</a>
+							@if (Route::has('login'))
+							<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('/login') }}">Get started</a>
+							@endif
 						</div>
 					</div>
 				</div>

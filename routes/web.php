@@ -31,14 +31,6 @@ Route::get('/work', function () {
 	return view('our_work');
 });
 
-Route::get('/register', function () {
-	return view('register');
-});
-
-Route::get('/login', function () {
-	return view('login');
-});
-
 Route::get('/submit', function () {
 	return view('submit_report');
 });
@@ -46,4 +38,12 @@ Route::get('/submit', function () {
 Route::get('/view', function () {
 	return view('view_report');
 });
+Route::get('/dashboard', function () {
+	return view('dashboard');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
 ?>
+
