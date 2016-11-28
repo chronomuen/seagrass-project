@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+@extends('layouts.app')
+
+@section('content')
 <html lang="en">
     <head>
 		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
@@ -60,8 +62,6 @@
         </style>
     </head>
     <body>
-		@include('navbar')
-
 		<div class="container">
 			<div id="navi">
 				<div id="particles" >
@@ -90,17 +90,34 @@
 								<div class="row">
 									<div class="col-lg-12">
 										<form id="register-form" action="" method="POST" role="form" style="display: block;">
-											<div class="form-group">
-												<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										{{ csrf_field() }}
+											<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+												<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="Name" value="">
+												    @if ($errors->has('name'))
+														<span class="help-block">
+															<strong>{{ $errors->first('name') }}</strong>
+														</span>
+													@endif
 											</div>
-											<div class="form-group">
+											<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
 												<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
+											        @if ($errors->has('email'))
+														<span class="help-block">
+															<strong>{{ $errors->first('email') }}</strong>
+														</span>
+													@endif
 											</div>
-											<div class="form-group">
+											<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
 												<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+													@if ($errors->has('password'))
+														<span class="help-block">
+															<strong>{{ $errors->first('password') }}</strong>
+														</span>
+													@endif
 											</div>
 											<div class="form-group">
 												<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+											
 											</div>
 											<div class="form-group">
 												<div class="row">
@@ -128,3 +145,4 @@
 		</header>
     </body>
 </html>
+@endsection

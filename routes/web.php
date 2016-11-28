@@ -38,12 +38,13 @@ Route::get('/submit', function () {
 Route::get('/view', function () {
 	return view('view_report');
 });
-Route::get('/dashboard', function () {
-	return view('dashboard');
+Route::get('/dashboard/profile', function () {
+	return view('profile');
 });
-
+Route::get('/dashboard', function () {
+	return view('profile');
+});
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
 ?>
 

@@ -8,11 +8,12 @@
   margin:0 auto;
   overflow:hidden;
   
+  
 }
 .navbar{
 	border:0px;
-	background:rgba(255,255,255,0.5);
-	position:absolute;
+	background:rgba(255,255,255,1);
+	position: absolute;
     top:0px;
     z-index:10;
     width:100%;
@@ -31,7 +32,15 @@
 }
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
-    background-color: #0099ff;
+    background-color: rgba(0, 107, 178, 0.75);
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+    background-color: rgba(0, 153, 255, 0.75);
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #000;
 }
 /*Main CSS*/
 html, body {

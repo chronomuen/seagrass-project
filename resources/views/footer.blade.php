@@ -1,10 +1,10 @@
 
     <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <section id="footer" style="background-color:#292b34;">
+    <section id="footer" style="background-color:#2a3a50;">
         <div class="container">
     		<center style="color:#fff;">
     		<div class="container">
-    		    <div class="well well-sm main-footer"  style="background-color:#292b34; border:0px">
+    		    <div class="well well-sm main-footer"  style="background-color:#2a3a50; border:0px">
     		        <div class="row">
     		            <div class="col-md-12">
     		                <div class="row">

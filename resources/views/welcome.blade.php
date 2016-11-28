@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
+
+@section('content')
     <head>
-		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
-		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/modernizr.js') }}"></script>
+		
 		<script language="Javascript" type="text/javascript">
 			// Wait for window load
 			
@@ -20,30 +18,17 @@
 		</script>
 		<style>
 		.fade-carousel .slides .slide-1 {
-		 background-image: url('{{ asset('images/sample.jpg') }}');
+		 background-image: url('{{ asset('images/carousel/1.png') }}');
 		}
 		.fade-carousel .slides .slide-2 {
-		 background-image: url('{{ asset('images/sample.jpg') }}');
+		 background-image: url('{{ asset('images/carousel/2.png') }}');
 		}
 		.fade-carousel .slides .slide-3 {
-		 background-image: url('{{ asset('images/sample.jpg') }}');
+		 background-image: url('{{ asset('images/carousel/3.png') }}');
 		}
 		</style>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>SeagrassSpotter</title>
 
-        <!-- Fonts -->
-		<link href="{{{ asset('css/fonts-googleapis.css') }}}" rel="stylesheet" type="text/css">
-		
-        <!-- Styles -->
-
-		<link href="{{{ asset('css/bootstrap.min.css') }}}" rel="stylesheet">
-		<link href="{{{ asset('css/navbar.css') }}}" rel="stylesheet">
-		<link href="{{{ asset('css/main.css') }}}" rel="stylesheet">
-		<link href="{{{ asset('css/carousel.css') }}}" rel="stylesheet">
-		<link href="{{{ asset('css/footer.css') }}}" rel="stylesheet">
 		<style>
 
         </style>
@@ -52,9 +37,9 @@
 		<div class="se-pre-con"></div>
 
 		<div class="bannerContainer">
-			@include('navbar')
+
 			
-			<div class="carousel fade-carousel carousel-fade slide" data-ride="carousel" data-interval="3000" id="bs-carousel">
+			<div class="carousel fade-carousel carousel-fade slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
 			  <!-- Overlay -->
 			  <div class="overlay"></div>
 
@@ -94,7 +79,7 @@
 								@if (Auth::guest())
 									<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('/login') }}">Get started</a>
 								@else
-									<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('/home') }}">Dashboard</a>
+									<a class="btn btn-clear btn-sm btn-min-block" href="{{ url('/dashboard') }}">My Dashboard</a>
 								@endif
 							@endif
 						</div>
@@ -107,5 +92,4 @@
 		
 		@include('footer')
     </body>
-
-</html>
+@endsection

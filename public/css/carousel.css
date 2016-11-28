@@ -5,6 +5,7 @@
   -moz-transition-property: opacity;
   -o-transition-property: opacity;
   transition-property: opacity;
+
 }
 .carousel-fade .carousel-inner .active {
   opacity: 1;
@@ -119,6 +120,7 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+
 }
 
 
@@ -136,6 +138,6 @@
 .bannerContainer {
     position:relative; 
     height:100vh;
-    
+      background-color:#000;
 }
 
