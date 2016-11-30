@@ -4,13 +4,10 @@
     <head>
 		<script language="Javascript" type="text/javascript">
 			// Wait for window load
-			
 			$(window).on('load', function() {
 				// Animate loader off screen
 				$(".se-pre-con").fadeOut("slow");
-				$('.carousel').carousel();
 			});
-			
 			window.onload = function() {
 				
 			}
@@ -23,11 +20,6 @@
 
 
 		</script>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>SeagrassSpotter</title>
-
 		<style>
 
         </style>
@@ -37,21 +29,7 @@
 		<div class="se-pre-con"></div>
 		<div class="container-fluid display-table">
 			<div class="row display-table-row">
-				<div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
-					<div class="logo">
-						<a hef="home.html"><img src="http://jskrishna.com/work/merkury/images/logo.png" alt="merkery_logo" class="hidden-xs hidden-sm">
-							<img src="http://jskrishna.com/work/merkury/images/circle-logo.png" alt="merkery_logo" class="visible-xs visible-sm circle-logo">
-						</a>
-					</div>
-					<div class="navi">
-						<ul>
-							<li class="active"><a href="{{ url('/dashboard/profile') }}"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>
-							<li><a href="#"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">View Map</span></a></li>
-							<li><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">All Sightings</span></a></li>
-							<li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Submit Sighting</span></a></li>
-						</ul>
-					</div>
-				</div>
+				@include('layouts.sidebar')
 				<div class="col-md-10 col-sm-11 display-table-cell v-align">
 					<div class="user-dashboard" style="margin-top:60px;">
 						<h1>Hello, {{ Auth::user()->name }}</h1>

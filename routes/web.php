@@ -31,11 +31,11 @@ Route::get('/work', function () {
 	return view('our_work');
 });
 
-Route::get('/submit', function () {
+Route::get('/dashboard/submit', function () {
 	return view('submit_report');
 });
 
-Route::get('/view', function () {
+Route::get('/dashboard/list', function () {
 	return view('view_report');
 });
 Route::get('/dashboard/profile', function () {

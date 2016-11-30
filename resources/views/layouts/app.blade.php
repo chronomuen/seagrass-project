@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'PH Seagrass Initiative') }}</title>
 	<!-- Fonts -->
 	<link href="{{{ asset('css/fonts-googleapis.css') }}}" rel="stylesheet" type="text/css">
     <!-- Styles -->
@@ -72,10 +72,8 @@
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav">
 					   <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
-					   <li ><a href="#">About</a></li>
-					   <li><a href="#">Services</a></li>
-					   <li><a href="#">Products</a></li>
-					   <li><a href="#">Contacts</a></li>
+					   <li ><a href="#">About Seagrass</a></li>
+					   <li ><a href="#">About Us</a></li>
                         @if (Auth::guest())
                             <li class="{{ Request::is('login')||Request::is('register') ? 'active' : '' }}">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

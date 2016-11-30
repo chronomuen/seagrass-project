@@ -27,7 +27,6 @@
 		 background-image: url('{{ asset('images/carousel/3.png') }}');
 		}
 		</style>
-        <title>SeagrassSpotter</title>
 
 		<style>
 
