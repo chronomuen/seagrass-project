@@ -32,14 +32,19 @@
 }
 .fade-carousel .carousel-indicators > li {
     margin: 0 2px;
-    background-color: #09f;
-    border-color: #09f;
+    background-color: transparent;
+    border-color: #fff;
     opacity: .7;
 }
+
+.fade-carousel .carousel-indicators > li,
 .fade-carousel .carousel-indicators > li.active {
-  width: 10px;
+  width: 50px;
   height: 10px;
   opacity: 1;
+}
+.fade-carousel .carousel-indicators > li.active {
+ background-color: #fff;
 }
 
 /********************************/
@@ -140,4 +145,5 @@
     height:100vh;
       background-color:#000;
 }
+
 

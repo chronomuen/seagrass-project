@@ -2,6 +2,7 @@
 
 @section('content')
     <head>
+		<link href="{{{ asset('css/bootstrap-datetimepicker.css') }}}" rel="stylesheet" media="screen">
 		<script language="Javascript" type="text/javascript">
 			// Wait for window load
 			
@@ -11,7 +12,7 @@
 			});
 			
 			window.onload = function() {
-				
+				$(".se-pre-con").fadeOut("slow");
 			}
 			$(document).ready(function(){
 			   $('[data-toggle="offcanvas"]').click(function(){
@@ -25,30 +26,40 @@
 
 
 		<style>
-
+			fieldset {
+				border: 0;
+			}
         </style>
     </head>
 	
 	<body class="home">
 		<div class="se-pre-con"></div>
+		
 		<div class="container-fluid display-table">
 			<div class="row display-table-row">
 				@include('layouts.sidebar')
 				<div class="col-md-10 col-sm-11 display-table-cell v-align" style="padding-top:75px;">
+				
 					<form class="form-horizontal">
 					<fieldset>
 
 					<!-- Form Name -->
-					<legend>Report Seagrass Sighting</legend>
+					<legend style="font-weight:bold;">Report Seagrass Sighting</legend>
 
 					<!-- Text input-->
 					<div class="form-group">
-					  <label class="col-md-4 control-label" for="date">Date</label>  
-					  <div class="col-md-4">
-					  <input id="date" name="date" type="text" placeholder="MM/DD/YYYY" class="form-control input-md" required="">
-					  <span class="help-block">e.g. 02/11/2016</span>  
-					  </div>
+					  <label class="col-md-4 control-label" for="date">Date of Sighting</label>  
+
+						    <div id="datetimepicker" class="input-append date">							  
+							  <div class="input-group date form_datetime col-md-5" data-date-format="MM dd yyyy HH:ii p" data-link-field="dtp_input1">
+								<input class="form-control" size="16" type="text" value="" readonly>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+							  </div>
+							</div>
+
 					</div>
+
 
 					<!-- Multiple Checkboxes -->
 					<div class="form-group">
@@ -90,13 +101,6 @@
 						  During very low tide (seagrass exposed)
 						</label>
 						</div>
-					  </div>
-					</div>
-
-					<!-- Prepended checkbox -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="others"></label>
-					  <div class="col-md-4">
 						<div class="input-group">
 						  <span class="input-group-addon">     
 							  <input type="checkbox">     
@@ -106,6 +110,8 @@
 						<p class="help-block">Please specify</p>
 					  </div>
 					</div>
+
+
 
 					<!-- Text input-->
 					<div class="form-group">
@@ -157,22 +163,17 @@
 						  Turbid
 						</label>
 						</div>
-					  </div>
-					</div>
-
-					<!-- Prepended checkbox -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label" for="others2"></label>
-					  <div class="col-md-4">
 						<div class="input-group">
 						  <span class="input-group-addon">     
 							  <input type="checkbox">     
 						  </span>
-						  <input id="others2" name="others2" class="form-control" type="text" placeholder="Others">
+						  <input id="others" name="others" class="form-control" type="text" placeholder="Others">
 						</div>
 						<p class="help-block">Please specify</p>
 					  </div>
 					</div>
+
+
 
 					<!-- Multiple Radios -->
 					<div class="form-group">
@@ -226,14 +227,16 @@
 						  Halophilia sp.
 						</label>
 						</div>
-					  <div class="checkbox">
-						<label for="species-8">
-						  <input type="checkbox" name="species" id="species-8" value="9">
-						  Others (please specify)
-						</label>
+						<div class="input-group">
+						  <span class="input-group-addon">     
+							  <input type="checkbox">     
+						  </span>
+						  <input id="others" name="others" class="form-control" type="text" placeholder="Others">
 						</div>
+						<p class="help-block">Please specify</p>						
 					  </div>
 					</div>
+
 
 					<!-- File Button --> 
 					<div class="form-group">
@@ -242,7 +245,13 @@
 						<input id="upload" name="upload" class="input-file" type="file">
 					  </div>
 					</div>
-
+					<!-- Submit Button -->
+					<div class="row">
+						<div class="col-sm-6 col-sm-offset-3">
+							<input type="submit" name="sighting-submit" id="sighting-submit" tabindex="4" class="form-control btn btn-login" style="text-transform:capitalize;" value="Submit">
+						</div>
+					</div>
+					
 					</fieldset>
 					</form>
 
@@ -250,7 +259,40 @@
 			</div>
 
 		</div>
-
+<script type="text/javascript" src="{{ URL::asset('js/bootstrap-datetimepicker.js') }}" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+        showMeridian: 1,
+		forceParse: 0,
+    });
+	$('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+	$('.form_time').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 1,
+		minView: 0,
+		maxView: 1,
+		forceParse: 0
+    });
+</script>
 
 
 

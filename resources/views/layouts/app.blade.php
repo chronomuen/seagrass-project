@@ -11,21 +11,27 @@
     <title>{{ config('app.name', 'PH Seagrass Initiative') }}</title>
 	<!-- Fonts -->
 	<link href="{{{ asset('css/fonts-googleapis.css') }}}" rel="stylesheet" type="text/css">
+	<link href="{{{ asset('css/font-awesome.min.css') }}}" rel="stylesheet" type="text/css">
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
-	<link href="{{{ asset('css/bootstrap.min.css') }}}" rel="stylesheet">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{{ asset('css/jquery-ui.css') }}}">
 	<link href="{{{ asset('css/dashboard.css') }}}" rel="stylesheet">
+	<link rel="stylesheet" href="{{{ asset('css/w3.css') }}}">
 	<link href="{{{ asset('css/navbar.css') }}}" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="{{{ asset('css/registration.css') }}}" rel="stylesheet">
 	<link href="{{{ asset('css/footer.css') }}}" rel="stylesheet">
 	<link href="{{{ asset('css/main.css') }}}" rel="stylesheet">
 	<link href="{{{ asset('css/carousel.css') }}}" rel="stylesheet">
+
     <!-- Scripts -->
-	
-		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/jquery.min.js') }}"></script>
-		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+		<script src="{{ URL::asset('js/jquery.js') }}"></script>
+		<script src="{{ URL::asset('js/jquery-ui.js') }}"></script>
+		<script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 		<script language="Javascript" type="text/javascript" src="{{ URL::asset('js/modernizr.js') }}"></script>
-    <script>
+	<script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
@@ -40,6 +46,11 @@
 		<style>
 			.navbar-default .navbar-nav>li>a {
 				color: #d1d1d1;
+			}
+			.no-js #loader { display: none;  }
+			.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+			.se-pre-con {
+				background: url('{{ asset('images/preloader.gif') }}') center no-repeat #fff !important ;
 			}
 		</style>
 	@endif
@@ -56,7 +67,7 @@
 		  </div>
 		  <div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="{{ url('/') }}">LOGO</a></li>
+				<li><a href="{{ url('/') }}" style="padding:0px;font-weight:bold;font-size:24px;" class="disabled"><img src={{asset('images/logo.png')}} alt="Logo" width="" height="50">ph<span style="color:#a8c649;">seagrass</span><span style="color:#6096c4;">initiative</span></a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<div class="navbar-header page-scroll">

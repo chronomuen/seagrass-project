@@ -8,9 +8,6 @@
 				// Animate loader off screen
 				$(".se-pre-con").fadeOut("slow");
 			});
-			window.onload = function() {
-				
-			}
 			$(document).ready(function(){
 			   $('[data-toggle="offcanvas"]').click(function(){
 				   $("#navigation").toggleClass("hidden-xs");

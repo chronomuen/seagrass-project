@@ -3,7 +3,11 @@
     height: auto; 
 
 }
-
+a:focus, a:hover, a {
+    outline: none;
+    text-decoration: none;
+    color: #1cb94e;
+}
 
 .fa{
     font-size:24px;
