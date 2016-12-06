@@ -35,9 +35,7 @@ Route::get('/dashboard/submit', function () {
 	return view('submit_report');
 });
 
-Route::get('/dashboard/list', function () {
-	return view('view_report');
-});
+Route::get('/dashboard/list', 'Sightings@viewSightings');
 Route::get('/dashboard/profile', function () {
 	return view('profile');
 });
