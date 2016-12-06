@@ -3,6 +3,7 @@
 @section('content')
     <head>
 		<link href="{{{ asset('css/bootstrap-datetimepicker.css') }}}" rel="stylesheet" media="screen">
+		<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
 		<script language="Javascript" type="text/javascript">
 			// Wait for window load
 			
@@ -39,10 +40,9 @@
 			<div class="row display-table-row">
 				@include('layouts.sidebar')
 				<div class="col-md-10 col-sm-11 display-table-cell v-align" style="padding-top:75px;">
-				
-					<form class="form-horizontal">
+					<form id="myform" class="form-horizontal">
 					<fieldset>
-
+					
 					<!-- Form Name -->
 					<legend style="font-weight:bold;">Report Seagrass Sighting</legend>
 
@@ -51,61 +51,61 @@
 					  <label class="col-md-4 control-label" for="date">Date of Sighting</label>  
 
 						    <div id="datetimepicker" class="input-append date">							  
-							  <div class="input-group date form_datetime col-md-5" data-date-format="MM dd yyyy HH:ii p" data-link-field="dtp_input1">
-								<input class="form-control" size="16" type="text" value="" readonly>
+							  <div class="input-group date form_datetime col-md-5" data-date-format="dd/mm/yyyy H:ii p" data-link-field="dtp_input1">
+								<input id="datePicker" class="form-control" size="16" type="text" readonly>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
 							  </div>
 							</div>
 
 					</div>
-
-
-					<!-- Multiple Checkboxes -->
+					
+					<!-- Multiple radioes -->
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="observation">Observation type</label>
 					  <div class="col-md-4">
-					  <div class="checkbox">
+					  <div class="radio">
+					  
 						<label for="observation-0">
-						  <input type="checkbox" name="observation" id="observation-0" value="1">
+						  <input type="radio" name="obs[]" id="observation-0" value="1">
 						  Scuba diving
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="observation-1">
-						  <input type="checkbox" name="observation" id="observation-1" value="2">
+						  <input type="radio" name="obs[]" id="observation-1" value="2">
 						  Skin diving
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="observation-2">
-						  <input type="checkbox" name="observation" id="observation-2" value="3">
+						  <input type="radio" name="obs[]" id="observation-2" value="3">
 						  Snorkeling
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="observation-3">
-						  <input type="checkbox" name="observation" id="observation-3" value="4">
+						  <input type="radio" name="obs[]" id="observation-3" value="4">
 						  On boat
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="observation-4">
-						  <input type="checkbox" name="observation" id="observation-4" value="5">
+						  <input type="radio" name="obs[]" id="observation-4" value="5">
 						  On field survey
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="observation-5">
-						  <input type="checkbox" name="observation" id="observation-5" value="6">
+						  <input type="radio" name="obs[]" id="observation-5" value="6">
 						  During very low tide (seagrass exposed)
 						</label>
 						</div>
 						<div class="input-group">
 						  <span class="input-group-addon">     
-							  <input type="checkbox">     
+							  <input id="othersobs" type="radio" name="obs[]">							  
 						  </span>
-						  <input id="others" name="others" class="form-control" type="text" placeholder="Others">
+						  <input id="detailsobs" name="detailsobs"  class="form-control" type="text" placeholder="Others">
 						</div>
 						<p class="help-block">Please specify</p>
 					  </div>
@@ -117,59 +117,60 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="depth">Depth of sighting (in meters)</label>  
 					  <div class="col-md-4">
-					  <input id="depth" name="depth" type="text" placeholder="0" class="form-control input-md" required="">
+					  <input id="depth" name="depth" type="text" placeholder="0" class="form-control input-md" required>
 					  <span class="help-block">e.g. 13</span>  
 					  </div>
 					</div>
 
-					<!-- Multiple Checkboxes -->
+					<!-- Multiple radioes -->
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="sediment">Sediment type</label>
 					  <div class="col-md-4">
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="sediment-0">
-						  <input type="checkbox" name="sediment" id="sediment-0" value="1">
+						  <input type="radio" name="sed[]" id="sediment-0" value="1">
 						  Sandy
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="sediment-1">
-						  <input type="checkbox" name="sediment" id="sediment-1" value="2">
+						  <input type="radio" name="sed[]" id="sediment-1" value="2">
 						  Coarse sand, with bits of corals (coralline)
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="sediment-2">
-						  <input type="checkbox" name="sediment" id="sediment-2" value="3">
+						  <input type="radio" name="sed[]" id="sediment-2" value="3">
 						  Muddy
 						</label>
 						</div>
 					  </div>
 					</div>
 
-					<!-- Multiple Checkboxes -->
+					<!-- Multiple radioes -->
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="water">Water clarity</label>
 					  <div class="col-md-4">
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="water-0">
-						  <input type="checkbox" name="water" id="water-0" value="1">
+						  <input type="radio" name="clar[]" id="water-0" value="1">
 						  Clear
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="water-1">
-						  <input type="checkbox" name="water" id="water-1" value="2">
+						  <input type="radio" name="clar[]" id="water-1" value="2">
 						  Turbid
 						</label>
 						</div>
 						<div class="input-group">
 						  <span class="input-group-addon">     
-							  <input type="checkbox">     
+							  <input id="othersclar" type="radio" name="clar[]">     
 						  </span>
-						  <input id="others" name="others" class="form-control" type="text" placeholder="Others">
+						  <input id="detailsclar" name="detailsclar" class="form-control" type="text" placeholder="Others">
 						</div>
 						<p class="help-block">Please specify</p>
+						
 					  </div>
 					</div>
 
@@ -179,72 +180,72 @@
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="species">Species (if you are familiar)</label>
 					  <div class="col-md-4" style="font-style:italic;">
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="species-0">
-						  <input type="checkbox" name="species" id="species-0" value="1">
+						  <input type="radio" name="spec[]" id="species-0" value="1">
 						  Enthalus acoroides
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="species-1">
-						  <input type="checkbox" name="species" id="species-1" value="2">
+						  <input type="radio" name="spec[]" id="species-1" value="2">
 						  Thalassia hemprichii
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="species-2">
-						  <input type="checkbox" name="species" id="species-2" value="3">
+						  <input type="radio" name="spec[]" id="species-2" value="3">
 						  Cymodocea rotundata
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="species-3">
-						  <input type="checkbox" name="species" id="species-3" value="4">
+						  <input type="radio" name="spec[]" id="species-3" value="4">
 						  Cymodocea serrulata
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="species-4">
-						  <input type="checkbox" name="species" id="species-4" value="5">
-						  Halodule uninervis
+						  <input type="radio" name="spec[]" id="species-4" value="5">
+						  Halodule pinifolia	
 						</label>
 						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="species-5">
-						  <input type="checkbox" name="species" id="species-5" value="6">
+						  <input type="radio" name="spec[]" id="species-5" value="6">
+						  Halodule uninervis		  
+						</label>
+						</div>
+					  <div class="radio">
+						<label for="species-6">
+						  <input type="radio" name="spec[]" id="species-6" value="7">
 						  Syringodium isoetifolium
 						</label>
 						</div>
-					  <div class="checkbox">
-						<label for="species-6">
-						  <input type="checkbox" name="species" id="species-6" value="7">
-						  Halodule pinifolia
-						</label>
-						</div>
-					  <div class="checkbox">
+					  <div class="radio">
 						<label for="species-7">
-						  <input type="checkbox" name="species" id="species-7" value="8">
+						  <input type="radio" name="spec[]" id="species-7" value="8">
 						  Halophilia sp.
 						</label>
 						</div>
 						<div class="input-group">
 						  <span class="input-group-addon">     
-							  <input type="checkbox">     
+							  <input id="othersspec" type="radio" name="spec[]">     
 						  </span>
-						  <input id="others" name="others" class="form-control" type="text" placeholder="Others">
+						  <input id="detailsspec" name="detailsspec" class="form-control" type="text" placeholder="Others">
 						</div>
 						<p class="help-block">Please specify</p>						
 					  </div>
 					</div>
 
-
-					<!-- File Button --> 
+					<!--
 					<div class="form-group">
 					  <label class="col-md-4 control-label" for="upload">Upload photo</label>
 					  <div class="col-md-4">
 						<input id="upload" name="upload" class="input-file" type="file">
 					  </div>
 					</div>
+					--> 
 					<!-- Submit Button -->
 					<div class="row">
 						<div class="col-sm-6 col-sm-offset-3">
@@ -259,8 +260,86 @@
 			</div>
 
 		</div>
+		
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-datetimepicker.js') }}" charset="UTF-8"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jqBootstrapValidation.js') }}" charset="UTF-8"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+<script type="text/javascript" src="{{ URL::asset('js/jquery-validate.bootstrap-tooltip.js') }}" charset="UTF-8"></script>
 <script type="text/javascript">
+	$("#myform").validate({ 
+		rules: { 
+				"depth":{
+					required: true,
+					number: true
+				},
+				"obs[]": { 
+						required: true, 
+						minlength: 1 
+				},
+				"sed[]": { 
+						required: true, 
+						minlength: 1 
+				},
+				"clar[]": { 
+						required: true, 
+						minlength: 1 
+				},
+				"spec[]": { 
+						required: true, 
+						minlength: 1 
+				},
+				"detailsobs": {
+				  required: "#othersobs:checked"
+				},
+				"detailsclar": {
+				  required: "#othersclar:checked"
+				},
+				"detailsspec": {
+				  required: "#othersspec:checked"
+				}
+				
+		}, 
+		messages: { 
+				"obs[]": "Please select at least one type of observation.",
+				"sed[]": "Please select at least one type of sediment.",
+				"clar[]": "Please select at least one type of water clarity.",
+				"spec[]": "Please select at least one species."
+		} 
+	}); 
+	/*document.getElementById("others2").addEventListener('change', function(){
+    document.getElementById("details2").required = this.checked ;})
+	document.getElementById("others1").addEventListener('change', function(){
+    document.getElementById("details1").required = this.checked ;})
+
+	document.getElementById("others3").addEventListener('change', function(){
+    document.getElementById("details3").required = this.checked ;})*/
+	
+	function formatAMPM(date) {
+	  var hours = date.getHours();
+	  var minutes = date.getMinutes();
+	  var ampm = hours >= 12 ? 'pm' : 'am';
+	  hours = hours % 12;
+	  hours = hours ? hours : 12; // the hour '0' should be '12'
+	  minutes = minutes < 10 ? '0'+minutes : minutes;
+	  var strTime = hours + ':' + minutes + ' ' + ampm;
+	  return strTime;
+	}
+	$(document).ready( 
+		function() {
+			var now = new Date();
+			var day = ("0" + now.getDate()).slice(-2);
+			MyDateString = ('0' + now.getDate()).slice(-2) + '/'
+             + ('0' + (now.getMonth()+1)).slice(-2) + '/'
+             + now.getFullYear();
+			var today = MyDateString+" "+formatAMPM(new Date());
+		   $('#datePicker').val(today);
+		}
+		
+	);
+	$(document).ready(
+		function () { $("input,select,textarea").not("[type=submit]").jqBootstrapValidation(); } 
+	)
     $('.form_datetime').datetimepicker({
         //language:  'fr',
         weekStart: 1,

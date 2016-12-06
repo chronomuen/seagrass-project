@@ -42,6 +42,11 @@
 			$('.dropdown-toggle').dropdown();
 		});
 	</script>
+		<style>
+			.se-pre-con {
+				background: url('{{ asset('images/preloader.gif') }}') center no-repeat #fff !important ;
+			}
+		</style>
 	@if ( Request::is('/'))
 		<style>
 			.navbar-default .navbar-nav>li>a {
@@ -49,9 +54,8 @@
 			}
 			.no-js #loader { display: none;  }
 			.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-			.se-pre-con {
-				background: url('{{ asset('images/preloader.gif') }}') center no-repeat #fff !important ;
-			}
+
+			
 		</style>
 	@endif
 </head>
@@ -83,8 +87,8 @@
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav">
 					   <li class="{{ Request::is('/') ? 'active' : '' }}"><a href="{{ url('/') }}">Home</a></li>
-					   <li ><a href="#">About Seagrass</a></li>
-					   <li ><a href="#">About Us</a></li>
+					   <li class="{{ Request::is('seagrass') ? 'active' : '' }}"><a href="{{ url('/seagrass') }}">About Seagrass</a></li>
+					   <li class="{{ Request::is('about') ? 'active' : '' }}"><a href="{{ url('/about') }}">About Us</a></li>
                         @if (Auth::guest())
                             <li class="{{ Request::is('login')||Request::is('register') ? 'active' : '' }}">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -106,7 +110,7 @@
 
                                 <ul class="dropdown-menu" role="menu">
 									@if (!(Request::is('dashboard*')))
-										<li><a href="{{ url('/dashboard') }}">Dashboard</li>
+										<li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
 									@endif
                                     <li>
                                         <a href="{{ url('/logout') }}"
@@ -131,7 +135,6 @@
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
+
 </body>
 </html>

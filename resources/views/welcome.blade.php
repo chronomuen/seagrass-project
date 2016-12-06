@@ -18,7 +18,8 @@
 		</script>
 		<style>
 
-		ul li a.disabled:hover{
+		ul li a.disabled:hover,
+		ul li a.disabled:focus{
 			color: #fff ! important;
 		}
 		.fade-carousel .slides .slide-1 {
@@ -42,7 +43,7 @@
 			background:linear-gradient(
 			  rgba(0, 0, 0, 0.45), 
 			  rgba(0, 0, 0, 0.45)
-			), url(http://www.sinaptical.es/wp-content/uploads/2015/03/overlaypatternbig2.png);
+			), url('{{ asset('images/overlay.png') }}');
 			height: 100%;
 			width: 100%;
 			position: fixed;
@@ -50,10 +51,6 @@
 			z-index: -1
 		}
 		</style>
-
-		<style>
-
-        </style>
     </head>
     <body>
 		<div class="se-pre-con">
@@ -117,7 +114,7 @@
 		<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
 		  <div class="w3-content">
 			<div class="w3-third w3-center">
-			  <i class="fa fa-anchor w3-padding-64 w3-text-green w3-margin-right" style="font-size:150px;"></i>
+			  <i class="fa fa-lightbulb-o w3-padding-64 w3-text-green w3-margin-right" style="font-size:150px;"></i>
 			</div>
 
 			<div class="w3-twothird">

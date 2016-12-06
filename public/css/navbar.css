@@ -84,7 +84,8 @@ html, body {
 	height: 100%;
 	z-index: 9999;
 }
-ul li a.disabled:hover{
+ul li a.disabled:hover,
+ul li a.disabled:focus{
 	background-color:transparent !important;
 	color:#59b2e0 !important;
 }
