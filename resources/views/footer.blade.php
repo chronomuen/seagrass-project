@@ -46,6 +46,4 @@
     	</div><!--end .container-->
     </section><!--end #footer-->
     <!-- Sticky Footer -->
-    <script type="text/javascript" src="js/footer.js"></script>
-    <!-- Fade Contact Footer -->
-    <script type="text/javascript" src="js/contactFade.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/footer.js') }}"></script>

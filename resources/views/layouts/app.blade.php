@@ -15,12 +15,14 @@
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="{{{ asset('css/bootstrap.min.css') }}}">
 	<link rel="stylesheet" href="{{{ asset('css/jquery-ui.css') }}}">
 	<link href="{{{ asset('css/dashboard.css') }}}" rel="stylesheet">
 	<link rel="stylesheet" href="{{{ asset('css/w3.css') }}}">
 	<link href="{{{ asset('css/navbar.css') }}}" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="{{{ asset('css/font-awesome.min.css') }}}">
 	<link href="{{{ asset('css/registration.css') }}}" rel="stylesheet">
 	<link href="{{{ asset('css/footer.css') }}}" rel="stylesheet">
 	<link href="{{{ asset('css/main.css') }}}" rel="stylesheet">
