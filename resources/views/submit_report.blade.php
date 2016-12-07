@@ -3,7 +3,7 @@
 @section('content')
     <head>
 		<link href="{{{ asset('css/bootstrap-datetimepicker.css') }}}" rel="stylesheet" media="screen">
-		<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+		<link rel="stylesheet" href="{{{ asset('css/jquery-validation.css') }}}">
 		<script language="Javascript" type="text/javascript">
 			// Wait for window load
 			$(document).ready(function() {
@@ -26,12 +26,15 @@
 			   $('[data-toggle="offcanvas"]').click(function(){
 				   $("#navigation").toggleClass("hidden-xs");
 			   });
+			   $('#pac-input').on('input', function() { 
+				codeAddress();
+				});
 			});
-		setInterval(function() { ObserveInputValue($('#input_id').val()); }, 100);
-
+			
 
 		</script>
 		<script type="text/javascript">
+		
 								function initialize() {
 										var address = (document.getElementById('pac-input'));
 										var autocomplete = new google.maps.places.Autocomplete(address);
@@ -67,7 +70,7 @@
 									  }
 									});
 								  }
-								google.maps.event.addDomListener(window, 'load', initialize);
+								//google.maps.event.addDomListener(window, 'load', initialize);
 
         </script>
 
@@ -152,7 +155,7 @@
 						<div class="col-md-4">
 
  
-						    <input id="pac-input" class="controls" onchange="codeAddress()" type="text" placeholder="Search Box" required>
+						    <input id="pac-input" class="controls" type="text" placeholder="Search Box" required>
 							<!--<button type="button" id="getCords" onClick="codeAddress();">Validate</button>-->
 							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD45bhdNZVJM-okT0zp5TU76ncSsaDHOfg&libraries=places&callback=initAutocomplete"
 								 async defer></script>
@@ -470,8 +473,8 @@
 		
 <script type="text/javascript" src="{{ URL::asset('js/bootstrap-datetimepicker.js') }}" charset="UTF-8"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jqBootstrapValidation.js') }}" charset="UTF-8"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+<script src="{{ URL::asset('js/jquery.validate.min.js') }}"></script>
+<script src="{{ URL::asset('js/additional-methods.min.js') }}"></script>
 <script type="text/javascript" src="{{ URL::asset('js/jquery-validate.bootstrap-tooltip.js') }}" charset="UTF-8"></script>
 <script type="text/javascript">
 	$("#myform").validate({ 
