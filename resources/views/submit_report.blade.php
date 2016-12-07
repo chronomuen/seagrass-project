@@ -235,11 +235,22 @@
 							  }
 
 							</script>
+
+						</div>
+						
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label for="long">Longitude</label>
+						<div class="col-md-4">
 							<input id="long" name="long" class="form-control" size="16" type="text" readonly >
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label for="lat">Latitude</label>
+						<div class="col-md-4">
 							<input id="lat" name="lat" class="form-control" size="16" type="text" readonly >
 						</div>
 					</div>
-					
 
 					<!-- Text input-->
 					<div class="form-group">
@@ -533,8 +544,8 @@
 		function() {
 			var now = new Date();
 			var day = ("0" + now.getDate()).slice(-2);
-			MyDateString = ('0' + now.getDate()).slice(-2) + '/'
-             + ('0' + (now.getMonth()+1)).slice(-2) + '/'
+			MyDateString = ('0' + (now.getMonth()+1)).slice(-2) + '/'
+             +  ('0' + now.getDate()).slice(-2)+ '/'
              + now.getFullYear();
 			var today = MyDateString+" "+formatAMPM(new Date());
 		   $('#datePicker').val(today);
