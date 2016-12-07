@@ -42,8 +42,8 @@
 					<legend>All Sightings</legend>
 
 					<?php 
-						foreach($infos as $info){
-							echo '<div>Latitude: '.$info[0]->latitude.' Longitude: '.$info[0]->longitude.' Date: '.$info[0]->created_at.' Name: '.$info[0]->name.'</div>';
+						foreach($sightings as $info){
+							echo '<div>Latitude: '.$info->latitude.' Longitude: '.$info->longitude.' Date: '.$info->created_at.' Name: '.$info->name.'</div>';
 						}
 					?>
 					

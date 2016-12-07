@@ -15,15 +15,8 @@ use Auth;
 class Sightings extends Controller
 {
     public function viewSightings(){
-		$user = Auth::user();
-		$id = $user->id;
-		$locations = DB::select('select * from user_location where user_id='.$id.';',[1]);
-		$infos = array();
-		foreach($locations as $loc){
-			$info = DB::select('select * from location where id='.$loc->location_id.';');
-			array_push($infos,$info);
-		}
+		$sightings = DB::select('select * from location order by created_at desc;',[1]);
 		
-		return view('view_report')->with(['infos'=> $infos]);
+		return view('view_report')->with(['sightings'=> $sightings]);
 	}
 }
