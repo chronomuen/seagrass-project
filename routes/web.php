@@ -27,12 +27,13 @@ Route::get('/contact', function () {
 	return view('contact_us');
 });
 
-Route::get('/work', function () {
-	return view('our_work');
-});
 
 Route::get('/dashboard/submit', function () {
 	return view('submit_report');
+});
+
+Route::get('/dashboard/map', function () {
+	return view('view_map');
 });
 
 Route::get('/dashboard/list', 'Sightings@viewSightings');
