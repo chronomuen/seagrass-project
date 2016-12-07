@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLocationTable extends Migration
+class CreateUserReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateLocationTable extends Migration
      */
     public function up()
     {
-        Schema::create('location', function (Blueprint $table) {
-			$table->increments('id');
-			$table->double('latitude',12,8);
-			$table->double('longitude',12,8);
-			$table->dateTime('created_at');
-			$table->char('name',30);
+        Schema::create('user_report', function(Blueprint $table){
+			$table->integer('user_id');
+			$table->integer('report_id');
 		});
     }
 
@@ -29,6 +26,6 @@ class CreateLocationTable extends Migration
      */
     public function down()
     {
-        Schema::drop('location');
+        Schema::drop('user_report');
     }
 }

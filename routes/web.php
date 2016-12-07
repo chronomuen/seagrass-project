@@ -37,12 +37,13 @@ Route::get('/dashboard/map', function () {
 });
 
 Route::get('/dashboard/list', 'Sightings@viewSightings');
-Route::get('/dashboard/profile', function () {
-	return view('profile');
-});
-Route::get('/dashboard', function () {
-	return view('profile');
-});
+
+Route::get('/dashboard/profile', 'profile@viewProfile');
+
+Route::get('/dashboard', 'profile@viewProfile');
+
+Route::post('/dashboard/add', array('uses'=>'Sightings@create'));
+
 Auth::routes();
 
 ?>
