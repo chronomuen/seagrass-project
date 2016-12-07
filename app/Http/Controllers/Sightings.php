@@ -10,7 +10,7 @@ use App\Http\Controllers\HomeController;
 
 use DB;
 
-use Input;
+use Redirect;
 
 use Auth;
 
@@ -44,5 +44,9 @@ class Sightings extends Controller
 		);
 		
 		DB::table('reports')->insert($reports);
+		
+		echo '<alert>Succesfully added sighting</alert>';
+		
+		return Redirect::back();
 	}
 }

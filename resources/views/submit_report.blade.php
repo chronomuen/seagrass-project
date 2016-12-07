@@ -52,7 +52,7 @@
 					  <label class="col-md-4 control-label" for="date">Date of Sighting</label>  
 
 						    <div id="datetimepicker" class="input-append date">							  
-							  <div class="input-group date form_datetime col-md-5" data-date-format="dd/mm/yyyy H:ii p" data-link-field="dtp_input1">
+							  <div class="input-group date form_datetime col-md-5" data-date-format="mm/dd/yyyy H:ii p" data-link-field="dtp_input1">
 								<input name="datePicker" id="datePicker" class="form-control" size="16" type="text" readonly>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
