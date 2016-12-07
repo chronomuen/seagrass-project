@@ -40,7 +40,8 @@
 			<div class="row display-table-row">
 				@include('layouts.sidebar')
 				<div class="col-md-10 col-sm-11 display-table-cell v-align" style="padding-top:75px;">
-					<form id="myform" class="form-horizontal">
+					<form id="myform" class="form-horizontal" action="/dashboard/add" method="POST">
+					{{Form::open(array('url'=>'/dashboard/add','method'=>'post'))}}
 					<fieldset>
 					
 					<!-- Form Name -->
@@ -52,7 +53,7 @@
 
 						    <div id="datetimepicker" class="input-append date">							  
 							  <div class="input-group date form_datetime col-md-5" data-date-format="dd/mm/yyyy H:ii p" data-link-field="dtp_input1">
-								<input id="datePicker" class="form-control" size="16" type="text" readonly>
+								<input name="datePicker" id="datePicker" class="form-control" size="16" type="text" readonly>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
 								<span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
 							  </div>
@@ -67,43 +68,43 @@
 					  <div class="radio">
 					  
 						<label for="observation-0">
-						  <input type="radio" name="obs[]" id="observation-0" value="1">
+						  <input type="radio" name="obs[]" id="observation-0" value="Scuba Diving">
 						  Scuba diving
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="observation-1">
-						  <input type="radio" name="obs[]" id="observation-1" value="2">
+						  <input type="radio" name="obs[]" id="observation-1" value="Skin diving">
 						  Skin diving
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="observation-2">
-						  <input type="radio" name="obs[]" id="observation-2" value="3">
+						  <input type="radio" name="obs[]" id="observation-2" value="Snorkeling">
 						  Snorkeling
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="observation-3">
-						  <input type="radio" name="obs[]" id="observation-3" value="4">
+						  <input type="radio" name="obs[]" id="observation-3" value="On boat">
 						  On boat
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="observation-4">
-						  <input type="radio" name="obs[]" id="observation-4" value="5">
+						  <input type="radio" name="obs[]" id="observation-4" value="On field survey">
 						  On field survey
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="observation-5">
-						  <input type="radio" name="obs[]" id="observation-5" value="6">
+						  <input type="radio" name="obs[]" id="observation-5" value="During very low tide (seagrass exposed)">
 						  During very low tide (seagrass exposed)
 						</label>
 						</div>
 						<div class="input-group">
 						  <span class="input-group-addon">     
-							  <input id="othersobs" type="radio" name="obs[]">							  
+							  <input id="othersobs" type="radio" name="obs[]" value="0">							  
 						  </span>
 						  <input id="detailsobs" name="detailsobs"  class="form-control" type="text" placeholder="Others">
 						</div>
@@ -128,19 +129,19 @@
 					  <div class="col-md-4">
 					  <div class="radio">
 						<label for="sediment-0">
-						  <input type="radio" name="sed[]" id="sediment-0" value="1">
+						  <input type="radio" name="sed[]" id="sediment-0" value="Sandy">
 						  Sandy
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="sediment-1">
-						  <input type="radio" name="sed[]" id="sediment-1" value="2">
+						  <input type="radio" name="sed[]" id="sediment-1" value="Coarse sand, with bits of corals (coralline)">
 						  Coarse sand, with bits of corals (coralline)
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="sediment-2">
-						  <input type="radio" name="sed[]" id="sediment-2" value="3">
+						  <input type="radio" name="sed[]" id="sediment-2" value="Muddy">
 						  Muddy
 						</label>
 						</div>
@@ -153,19 +154,19 @@
 					  <div class="col-md-4">
 					  <div class="radio">
 						<label for="water-0">
-						  <input type="radio" name="clar[]" id="water-0" value="1">
+						  <input type="radio" name="clar[]" id="water-0" value="Clear">
 						  Clear
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="water-1">
-						  <input type="radio" name="clar[]" id="water-1" value="2">
+						  <input type="radio" name="clar[]" id="water-1" value="Turbid">
 						  Turbid
 						</label>
 						</div>
 						<div class="input-group">
 						  <span class="input-group-addon">     
-							  <input id="othersclar" type="radio" name="clar[]">     
+							  <input id="othersclar" type="radio" name="clar[]" value="0">     
 						  </span>
 						  <input id="detailsclar" name="detailsclar" class="form-control" type="text" placeholder="Others">
 						</div>
@@ -182,55 +183,55 @@
 					  <div class="col-md-4" style="font-style:italic;">
 					  <div class="radio">
 						<label for="species-0">
-						  <input type="radio" name="spec[]" id="species-0" value="1">
+						  <input type="radio" name="spec[]" id="species-0" value="Enthalus acoroides">
 						  Enthalus acoroides
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="species-1">
-						  <input type="radio" name="spec[]" id="species-1" value="2">
+						  <input type="radio" name="spec[]" id="species-1" value="Thalassia hemprichii">
 						  Thalassia hemprichii
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="species-2">
-						  <input type="radio" name="spec[]" id="species-2" value="3">
+						  <input type="radio" name="spec[]" id="species-2" value="Cymodocea rotundata">
 						  Cymodocea rotundata
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="species-3">
-						  <input type="radio" name="spec[]" id="species-3" value="4">
+						  <input type="radio" name="spec[]" id="species-3" value="Cymodocea serrulata">
 						  Cymodocea serrulata
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="species-4">
-						  <input type="radio" name="spec[]" id="species-4" value="5">
+						  <input type="radio" name="spec[]" id="species-4" value="Halodule pinifolia">
 						  Halodule pinifolia	
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="species-5">
-						  <input type="radio" name="spec[]" id="species-5" value="6">
+						  <input type="radio" name="spec[]" id="species-5" value="Halodule uninervis">
 						  Halodule uninervis		  
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="species-6">
-						  <input type="radio" name="spec[]" id="species-6" value="7">
+						  <input type="radio" name="spec[]" id="species-6" value="Syringodium isoetifolium">
 						  Syringodium isoetifolium
 						</label>
 						</div>
 					  <div class="radio">
 						<label for="species-7">
-						  <input type="radio" name="spec[]" id="species-7" value="8">
+						  <input type="radio" name="spec[]" id="species-7" value="Halophilia sp.">
 						  Halophilia sp.
 						</label>
 						</div>
 						<div class="input-group">
 						  <span class="input-group-addon">     
-							  <input id="othersspec" type="radio" name="spec[]">     
+							  <input id="othersspec" type="radio" name="spec[]" value="0">     
 						  </span>
 						  <input id="detailsspec" name="detailsspec" class="form-control" type="text" placeholder="Others">
 						</div>
@@ -254,6 +255,7 @@
 					</div>
 					
 					</fieldset>
+					{{Form::close()}}
 					</form>
 
 				</div>
