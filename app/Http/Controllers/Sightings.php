@@ -17,7 +17,7 @@ use Auth;
 class Sightings extends Controller
 {
     public function viewSightings(){
-		$sightings = DB::select('select * from reports order by created_at desc;',[1]);
+		$sightings = DB::select('select * from reports join users on reports.user_id=users.id order by reports.created_at desc;',[1]);
 		
 		return view('view_report')->with(['sightings'=> $sightings]);
 	}
@@ -45,7 +45,7 @@ class Sightings extends Controller
 		}
 		
 		$reports = array(
-			['location' => $name, 'longitude' => $long, 'latitude' => $lat, 'date' => $date->format('Y-m-d'), 'time' => $date->format('H:i:s'), 'observation' => $observation, 'depth' => $depth, 'sediment' => $sediment, 'clarity' => $clarity, 'type' => $type]
+			['user_id'=>$id, 'location' => $name, 'longitude' => $long, 'latitude' => $lat, 'date' => $date->format('Y-m-d'), 'time' => $date->format('H:i:s'), 'observation' => $observation, 'depth' => $depth, 'sediment' => $sediment, 'clarity' => $clarity, 'type' => $type]
 		);
 		
 		DB::table('reports')->insert($reports);

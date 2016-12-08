@@ -16,6 +16,7 @@
     <link href="/css/app.css" rel="stylesheet">
 	
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	
 	<link rel="stylesheet" href="{{{ asset('css/bootstrap.min.css') }}}">
 	<link rel="stylesheet" href="{{{ asset('css/jquery-ui.css') }}}">
 	<link href="{{{ asset('css/dashboard.css') }}}" rel="stylesheet">

@@ -458,7 +458,9 @@
 					<!-- Submit Button -->
 					<div class="row">
 						<div class="col-sm-6 col-sm-offset-3">
+						<form action="/my/link/location" method="get">
 							<input type="submit" name="sighting-submit" id="sighting-submit" tabindex="4" class="form-control btn btn-login" style="text-transform:capitalize;" value="Submit"> 
+						<form action="/my/link/location" method="get">
 						</div>
 					</div>
 					

@@ -13,6 +13,9 @@
 				   $("#navigation").toggleClass("hidden-xs");
 			   });
 			});
+			$(document).ready(function(){
+				$('[data-toggle="popover"]').popover();   
+			});
 
 
 
@@ -30,48 +33,24 @@
 				<div class="col-md-10 col-sm-11 display-table-cell v-align">
 					<div class="user-dashboard" style="margin-top:60px;">
 						<h1>Hello, {{ Auth::user()->name }}</h1>
-						<div class="row">
-							<div class="col-md-5 col-sm-5 col-xs-12 gutter">
+						<!-- Trigger the modal with a button -->
+						<h2>Here are your submitted reports</h2>
+						<div class="list-group" style="width:75%;">
+							@foreach($infos as $info)
+								
+								<a href="#" class="list-group-item" title="<i>{{$info[0]->type}}</i>" data-html="true" data-toggle="popover" 
+								data-placement="right" data-content="Observation type: {{$info[0]->observation}}<br/>
+																	Depth: {{$info[0]->depth}} m<br/>
+																	Sediment type: {{$info[0]->sediment}}<br/>
+																	Water clarity: {{$info[0]->clarity}}">
+								  <h4 class="list-group-item-heading">{{$info[0]->location}}</h4>
+								  <p class="list-group-item-text">{{date('M j, Y',strtotime($info[0]->date))}} {{date('g:i:s A',strtotime($info[0]->time))}}</p>
+								  <p class="list-group-item-text"><i>{{$info[0]->type}}</i></p>
+								</a>
 
-								<div class="sales">
-									<h2>Your Sale</h2>
 
-									<div class="btn-group">
-										<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<span>Period:</span> Last Year
-										</button>
-										<div class="dropdown-menu">
-											<a href="#">2012</a>
-											<a href="#">2014</a>
-											<a href="#">2015</a>
-											<a href="#">2016</a>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-7 col-sm-7 col-xs-12 gutter">
-
-								<div class="sales report">
-									<h2>Report</h2>
-									<div class="btn-group">
-										<button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-											<span>Period:</span> Last Year
-										</button>
-										<div class="dropdown-menu">
-											<a href="#">2012</a>
-											<a href="#">2014</a>
-											<a href="#">2015</a>
-											<a href="#">2016</a>
-										</div>
-									</div>
-								</div>
-							</div>
+							@endforeach
 						</div>
-						<?php
-							foreach($infos as $info){
-								echo '<div>Location: '.$info[0]->location.'Latitude: '.$info[0]->latitude.' Longitude: '.$info[0]->longitude.' Date: '.$info[0]->created_at.' Name: '.$info[0]->type.'</div>';
-							}
-						?>
 					</div>
 				</div>
 			</div>

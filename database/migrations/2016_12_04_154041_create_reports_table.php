@@ -15,6 +15,7 @@ class CreateReportsTable extends Migration
     {
         Schema::create('reports', function (Blueprint $table) {
             $table->increments('id');
+			$table->integer('user_id');
             $table->string('location');
 			$table->decimal('longitude', 5, 2);
 			$table->decimal('latitude', 5, 2);
