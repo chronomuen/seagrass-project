@@ -38,14 +38,14 @@
 						<div class="list-group" style="width:75%;">
 							@foreach($infos as $info)
 								
-								<a href="#" class="list-group-item" title="<i>{{$info[0]->type}}</i>" data-html="true" data-toggle="popover" 
-								data-placement="right" data-content="Observation type: {{$info[0]->observation}}<br/>
-																	Depth: {{$info[0]->depth}} m<br/>
-																	Sediment type: {{$info[0]->sediment}}<br/>
-																	Water clarity: {{$info[0]->clarity}}">
-								  <h4 class="list-group-item-heading">{{$info[0]->location}}</h4>
-								  <p class="list-group-item-text">{{date('M j, Y',strtotime($info[0]->date))}} {{date('g:i:s A',strtotime($info[0]->time))}}</p>
-								  <p class="list-group-item-text"><i>{{$info[0]->type}}</i></p>
+								<a href="#" class="list-group-item" title="<i>{{$info->type}}</i>" data-html="true" data-toggle="popover" 
+								data-placement="right" data-content="Observation type: {{$info->observation}}<br/>
+																	Depth: {{$info->depth}} m<br/>
+																	Sediment type: {{$info->sediment}}<br/>
+																	Water clarity: {{$info->clarity}}">
+								  <h4 class="list-group-item-heading">{{$info->location}}</h4>
+								  <p class="list-group-item-text">{{date('M j, Y',strtotime($info->date))}} {{date('g:i:s A',strtotime($info->time))}}</p>
+								  <p class="list-group-item-text"><i>{{$info->type}}</i></p>
 								</a>
 
 

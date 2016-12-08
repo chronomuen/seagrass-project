@@ -17,7 +17,7 @@ use Auth;
 class Sightings extends Controller
 {
     public function viewSightings(){
-		$sightings = DB::select('select * from reports join users on reports.user_id=users.id order by reports.created_at desc;',[1]);
+		$sightings = DB::select('select * from reports join users on reports.user_id=users.id order by reports.date,reports.time desc;',[1]);
 		
 		return view('view_report')->with(['sightings'=> $sightings]);
 	}
