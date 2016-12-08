@@ -69,7 +69,7 @@
 						</div>
 						<?php
 							foreach($infos as $info){
-								echo '<div>Latitude: '.$info[0]->latitude.' Longitude: '.$info[0]->longitude.' Date: '.$info[0]->created_at.' Name: '.$info[0]->name.'</div>';
+								echo '<div>Location: '.$info[0]->location.'Latitude: '.$info[0]->latitude.' Longitude: '.$info[0]->longitude.' Date: '.$info[0]->created_at.' Name: '.$info[0]->type.'</div>';
 							}
 						?>
 					</div>

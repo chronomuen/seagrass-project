@@ -23,6 +23,11 @@ class Sightings extends Controller
 	}
 	
 	public function create(){
+		$user = Auth::user();
+		$id = $user->id;
+		$name = $_POST['place'];
+		$long = $_POST['long'];
+		$lat = $_POST['lat'];
 		$date = date_create($_POST['datePicker']);
 		$observation = $_POST['obs'][0];
 		if ($observation == '0'){
@@ -40,10 +45,16 @@ class Sightings extends Controller
 		}
 		
 		$reports = array(
-			['date' => $date->format('Y-m-d'), 'time' => $date->format('H:i:s'), 'observation' => $observation, 'depth' => $depth, 'sediment' => $sediment, 'clarity' => $clarity, 'type' => $type]
+			['location' => $name, 'longitude' => $long, 'latitude' => $lat, 'date' => $date->format('Y-m-d'), 'time' => $date->format('H:i:s'), 'observation' => $observation, 'depth' => $depth, 'sediment' => $sediment, 'clarity' => $clarity, 'type' => $type]
 		);
 		
 		DB::table('reports')->insert($reports);
+		$report_id = DB::select('select max(id) as id from reports');
+		$array = array(
+			['user_id' => $id, 'report_id' => $report_id[0]->id]
+		);
+		
+		DB::table('user_report')->insert($array);
 		
 		echo '<alert>Succesfully added sighting</alert>';
 		

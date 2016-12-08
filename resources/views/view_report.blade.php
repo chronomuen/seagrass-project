@@ -43,7 +43,7 @@
 
 					<?php 
 						foreach($sightings as $info){
-							echo '<div>Latitude: '.$info->latitude.' Longitude: '.$info->longitude.' Date: '.$info->created_at.' Name: '.$info->name.'</div>';
+							echo '<div>Location: '.$info->location.'Latitude: '.$info->latitude.' Longitude: '.$info->longitude.' Date: '.$info->created_at.' Name: '.$info->type.'</div>';
 						}
 					?>
 					

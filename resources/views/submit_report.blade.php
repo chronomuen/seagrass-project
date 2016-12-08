@@ -155,7 +155,7 @@
 						<div class="col-md-4">
 
  
-						    <input id="pac-input" class="controls" type="text" placeholder="Search Box" required>
+						    <input id="pac-input" name="place" class="controls" type="text" placeholder="Search Box" required>
 							<!--<button type="button" id="getCords" onClick="codeAddress();">Validate</button>-->
 							<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD45bhdNZVJM-okT0zp5TU76ncSsaDHOfg&libraries=places&callback=initAutocomplete"
 								 async defer></script>
