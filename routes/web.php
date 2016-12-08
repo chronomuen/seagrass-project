@@ -42,6 +42,8 @@ Route::get('/dashboard/profile', 'profile@viewProfile');
 
 Route::get('/dashboard', 'profile@viewProfile');
 
+Route::get('/dashboard/map', 'Sightings@viewMap');
+
 Route::post('/dashboard/add', array('uses'=>'Sightings@create'));
 
 Auth::routes();

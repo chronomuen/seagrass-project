@@ -21,7 +21,10 @@ class Sightings extends Controller
 		
 		return view('view_report')->with(['sightings'=> $sightings]);
 	}
-	
+    public function viewMap(){
+		$sightings = DB::select('select * from reports join users on reports.user_id=users.id order by reports.date,reports.time desc;',[1]);
+		return view('view_map')->with(['sightings'=> $sightings]);
+	}	
 	public function create(){
 		$user = Auth::user();
 		$id = $user->id;
