@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
-<html>
   <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
@@ -19,8 +15,17 @@
       }
     </style>
   </head>
-  <body>
-    <div id="map"></div>
+  <body class="home">
+  @section('content')
+  <div class="container-fluid display-table">
+			<div class="row display-table-row">
+				@include('layouts.sidebar')
+				<div class="col-md-10 col-sm-11 display-table-cell v-align">
+					<div id="map" ></div>
+				</div>
+			</div>
+	</div>
+					
     <script>
       // Note: This example requires that you consent to location sharing when
       // prompted by your browser. If you see the error "The Geolocation service
@@ -29,7 +34,7 @@
 
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 120.397, lng: 15.644},
+          center: {lat: 120.397, lng: 16.644},
           zoom: 6
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
@@ -52,11 +57,15 @@
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
-
 		@foreach($sightings as $place)
+			var locVar = "{{$place->location}}";
 			var longVar = {{$place->longitude}};
 			var latVar = {{$place->latitude}};
-
+			var myLatLng = {lat: latVar, lng: longVar};
+			var marker = new google.maps.Marker({
+				position: myLatLng,
+				map: map,
+				title: locVar});
 		@endforeach
       }
 
@@ -66,10 +75,11 @@
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
       }
+	  
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApcQ6qvorfP0jzFnELShdnWlBbmH9dYlI&callback=initMap">
     </script>
+	@endsection
   </body>
-</html>
-@endsection
+

@@ -13,7 +13,6 @@
 	<link href="{{{ asset('css/fonts-googleapis.css') }}}" rel="stylesheet" type="text/css">
 	<link href="{{{ asset('css/font-awesome.min.css') }}}" rel="stylesheet" type="text/css">
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
 	
 	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
 	
