@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'PH Seagrass Initiative') }}</title>
+	<link rel="icon" type="image/png" href="{{{ asset('favicon.ico') }}}">
 	<!-- Fonts -->
 	<link href="{{{ asset('css/fonts-googleapis.css') }}}" rel="stylesheet" type="text/css">
 	<link href="{{{ asset('css/font-awesome.min.css') }}}" rel="stylesheet" type="text/css">
