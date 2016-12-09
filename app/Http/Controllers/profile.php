@@ -18,7 +18,7 @@ class profile extends Controller
 		$user = Auth::user();
 		$id = $user->id;
 
-			$infos = DB::select('select * from reports where reports.user_id='.$id.' order by reports.date,reports.time desc;');
+			$infos = DB::select('select * from reports where reports.user_id='.$id.' order by reports.date desc,reports.time desc;');
 
 		
 		return view('profile')->with(['infos' => $infos]);
