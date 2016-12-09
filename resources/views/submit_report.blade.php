@@ -144,8 +144,8 @@
 			<div class="row display-table-row">
 				@include('layouts.sidebar')
 				<div class="col-md-10 col-sm-11 display-table-cell v-align" style="padding-top:75px;">
-					<form id="myform" class="form-horizontal" action="/dashboard/add" method="POST">
-					{{Form::open(array('url'=>'/dashboard/add','method'=>'post'))}}
+					<form id="myform" class="form-horizontal" action="{{ url('/dashboard/add') }}" method="POST">
+					{{Form::open(array('url'=>' ','method'=>'post'))}}
 					<fieldset>
 					
 					<!-- Form Name -->
